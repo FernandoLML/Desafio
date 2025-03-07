@@ -1,31 +1,20 @@
 const read = require ("readline-sync")
 
 function perfeito(x){
-    int: soma, y, metade;
-    let resultado
-    metade = x/2;
-    y = 1
+    let soma = 0;
+    metade = Math.floor(x / 2);
 
-    while (y <= metade){
-
-        if (x % y == 0){
-            soma = soma + y
+    for (let y = 1; y <= metade; y++){
+        if (x % y === 0){
+            soma += y;
         }
-        
-        y = y + 1;
+
     }
 
-    if (soma == x){
-        resultado = TRUE
-    } 
-    else {
-        resultado = FALSE
-    }
-
-    return resultado;
+    return soma === x;
 }
 
-let x = parseInt(read.question("Digite um número inteiro: "));
+let x = parseInt(read.question("Digite um numero inteiro: "));
 
-console.log(`${perfeito(x)}`);
+console.log(`O numero ${x} e perfeito? \n ${perfeito(x)}`);
 
